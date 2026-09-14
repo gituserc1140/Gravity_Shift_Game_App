@@ -57,10 +57,14 @@
     }
 
     saveProgress() {
-      localStorage.setItem(SAVE_KEY, JSON.stringify({
-        unlockedLevel: this.state.unlockedLevel,
-        crystalsByLevel: this.state.crystalsByLevel
-      }));
+      try {
+        localStorage.setItem(SAVE_KEY, JSON.stringify({
+          unlockedLevel: this.state.unlockedLevel,
+          crystalsByLevel: this.state.crystalsByLevel
+        }));
+      } catch (error) {
+        return;
+      }
     }
 
     bindInput() {
@@ -270,7 +274,12 @@
       this.player.grounded = collision.grounded;
       this.player.standingPlatform = collision.standingPlatform;
 
-      if (this.player.y > WORLD.height + 80 || this.player.y + this.player.h < -80) {
+      if (
+        this.player.x > WORLD.width + 80 ||
+        this.player.x + this.player.w < -80 ||
+        this.player.y > WORLD.height + 80 ||
+        this.player.y + this.player.h < -80
+      ) {
         this.respawn();
         return;
       }

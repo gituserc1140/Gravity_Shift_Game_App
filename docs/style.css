@@ -49,7 +49,11 @@ button:hover,
 button:focus-visible {
   border-color: rgba(126, 255, 214, 0.8);
   box-shadow: 0 0 22px rgba(126, 255, 214, 0.25);
-  outline: none;
+}
+
+button:focus-visible {
+  outline: 3px solid rgba(126, 255, 214, 0.9);
+  outline-offset: 3px;
 }
 
 button:active,
