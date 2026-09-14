@@ -320,6 +320,7 @@
             if (flipped) {
               this.player.portalLock = true;
               portal.cooldown = 0.3;
+              break;
             }
           }
         }
