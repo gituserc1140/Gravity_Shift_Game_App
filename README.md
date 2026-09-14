@@ -1,1 +1,58 @@
-# Gravity_Shift_Game_App
+# Gravity Shift
+
+Gravity Shift is a mobile-friendly 2D puzzle platformer built with HTML, CSS, JavaScript, and the HTML5 Canvas API. Players traverse neon laboratory test chambers by flipping gravity between the floor and ceiling, collecting energy crystals, and reaching the exit door.
+
+## Features
+
+- 10 playable levels with increasing difficulty
+- Gravity flip mechanic for floor and ceiling traversal
+- Touch-friendly mobile controls plus desktop keyboard controls
+- Hazards including spikes, falling blocks, and laser barriers
+- Moving platforms, gravity zones, gravity portals, and locked exits
+- Crystal collection and sequential level unlocking
+- Progress saved locally with `localStorage`
+- Static `/docs` deployment structure for GitHub Pages
+
+## Controls
+
+### Desktop
+
+- `A` / `D` or arrow keys: move left / right
+- `Space`: jump
+- `Shift`: flip gravity
+- `Escape` or the on-screen Pause button: pause
+
+### Mobile
+
+Use the on-screen buttons for left, right, jump, and gravity flip.
+
+## Project Structure
+
+```text
+/docs
+  index.html
+  style.css
+  game.js
+  player.js
+  levels.js
+  physics.js
+  ui.js
+README.md
+```
+
+## Local Development
+
+Because the game is fully static, you can open `/docs/index.html` directly in a browser or serve the repository with any simple static file server.
+
+Example with Python:
+
+```bash
+cd Gravity_Shift_Game_App
+python -m http.server 8000
+```
+
+Then open `http://localhost:8000/docs/`.
+
+## GitHub Pages Deployment
+
+Configure GitHub Pages to serve from the repository's `/docs` directory on your default branch.
