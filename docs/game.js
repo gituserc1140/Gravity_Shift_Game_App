@@ -6,6 +6,7 @@
 
   const WORLD = { width: 960, height: 540 };
   const SAVE_KEY = 'gravity-shift-save-v1';
+  const cloneLevel = (level) => JSON.parse(JSON.stringify(level));
 
   class GravityShiftGame {
     constructor() {
@@ -143,7 +144,7 @@
       this.state.crystalCount = 0;
       const level = LEVELS[index];
       this.state.levelCrystals = level.crystals.length;
-      this.levelState = structuredClone(level);
+      this.levelState = cloneLevel(level);
       this.player.reset(level.start);
       this.prepareLevelState();
       this.ui.hideAll();
@@ -187,7 +188,7 @@
       if (this.state.mode !== 'playing' && this.state.mode !== 'paused') {
         return;
       }
-      const shouldPause = typeof force === 'boolean' ? !force : !this.state.paused;
+      const shouldPause = typeof force === 'boolean' ? force : !this.state.paused;
       this.state.paused = shouldPause;
       this.state.mode = shouldPause ? 'paused' : 'playing';
       if (shouldPause) {
