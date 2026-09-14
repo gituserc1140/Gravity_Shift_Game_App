@@ -55,4 +55,6 @@ Then open `http://localhost:8000/docs/`.
 
 ## GitHub Pages Deployment
 
-Configure GitHub Pages to serve from the repository's `/docs` directory on your default branch.
+If GitHub Pages is publishing the repository root, the root `index.html` now redirects visitors into `/docs/` so the game loads instead of the default repository information page.
+
+If you prefer branch-based Pages settings, you can still configure GitHub Pages to serve directly from the repository's `/docs` directory on your default branch.
