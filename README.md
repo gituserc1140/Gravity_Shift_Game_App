@@ -2,6 +2,8 @@
 
 Gravity Shift is a mobile-friendly 2D puzzle platformer built with HTML, CSS, JavaScript, and the HTML5 Canvas API. Players traverse neon laboratory test chambers by flipping gravity between the floor and ceiling, collecting energy crystals, and reaching the exit door.
 
+[![Play on GitHub Pages](https://img.shields.io/badge/Play-Gravity%20Shift-1d9bff?style=for-the-badge&logo=github)](https://gituserc1140.github.io/Gravity_Shift_Game_App/)
+
 ## Features
 
 - 10 playable levels with increasing difficulty
@@ -19,7 +21,7 @@ Gravity Shift is a mobile-friendly 2D puzzle platformer built with HTML, CSS, Ja
 
 - `A` / `D` or arrow keys: move left / right
 - `Space`: jump
-- `Shift`: flip gravity
+- `Shift` or `G`: flip gravity
 - `Escape` or the on-screen Pause button: pause
 
 ### Mobile

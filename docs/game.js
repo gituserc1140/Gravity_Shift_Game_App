@@ -78,7 +78,7 @@
         if (pressed && code === 'Space') {
           this.input.jumpPressed = true;
         }
-        if (pressed && (code === 'ShiftLeft' || code === 'ShiftRight')) {
+        if (pressed && (code === 'ShiftLeft' || code === 'ShiftRight' || code === 'KeyG')) {
           this.input.flipPressed = true;
         }
       };
@@ -91,7 +91,7 @@
           }
           return;
         }
-        if (['Space', 'ArrowLeft', 'ArrowRight'].includes(event.code) || event.code.startsWith('Shift')) {
+        if (['Space', 'ArrowLeft', 'ArrowRight', 'KeyG'].includes(event.code) || event.code.startsWith('Shift')) {
           event.preventDefault();
         }
         setKey(true, event.code);
