@@ -99,6 +99,7 @@
 
       window.addEventListener('keyup', (event) => setKey(false, event.code));
       window.addEventListener('resize', () => this.resize());
+      this.canvas.addEventListener('pointerdown', () => this.canvas.focus());
 
       const bindTouch = (button, control) => {
         const down = (event) => {
@@ -327,6 +328,7 @@
           if (!this.player.portalLock && portal.cooldown <= 0) {
             const flipped = this.player.flip();
             if (flipped) {
+              this.teleportFromPortal(portal);
               this.player.portalLock = true;
               portal.cooldown = 0.3;
               break;
@@ -337,6 +339,24 @@
       if (!touchedPortal) {
         this.player.portalLock = false;
       }
+    }
+
+    teleportFromPortal(portal) {
+      if (portal.pair === undefined) {
+        return;
+      }
+      const destination = this.levelState.portals[portal.pair];
+      if (!destination) {
+        return;
+      }
+      const centeredX = destination.x + (destination.w - this.player.w) / 2;
+      const offsetY = this.player.gravity > 0
+        ? destination.y - this.player.h - 6
+        : destination.y + destination.h + 6;
+      this.player.x = Physics.clamp(centeredX, 22, WORLD.width - this.player.w - 22);
+      this.player.y = Physics.clamp(offsetY, 22, WORLD.height - this.player.h - 22);
+      this.player.vx *= 0.6;
+      destination.cooldown = 0.3;
     }
 
     collectCrystals() {

@@ -105,8 +105,8 @@
       ],
       gravityZones: [{ x: 735, y: 126, w: 120, h: 90, direction: -1 }],
       portals: [
-        { x: 396, y: 322, w: 38, h: 38 },
-        { x: 594, y: 236, w: 38, h: 38 }
+        { x: 396, y: 322, w: 38, h: 38, pair: 1 },
+        { x: 594, y: 236, w: 38, h: 38, pair: 0 }
       ],
       fallingBlocks: [],
       lasers: [],
@@ -274,8 +274,8 @@
         { x: 660, y: 250, w: 105, h: 90, direction: 1 }
       ],
       portals: [
-        { x: 532, y: 188, w: 38, h: 38 },
-        { x: 786, y: 52, w: 38, h: 38 }
+        { x: 532, y: 188, w: 38, h: 38, pair: 1 },
+        { x: 786, y: 52, w: 38, h: 38, pair: 0 }
       ],
       fallingBlocks: [
         { x: 305, y: 75, w: 42, h: 42, triggerDistance: 140 },
@@ -322,8 +322,8 @@
         { x: 725, y: 190, w: 90, h: 90, direction: -1 }
       ],
       portals: [
-        { x: 392, y: 274, w: 36, h: 36 },
-        { x: 618, y: 148, w: 36, h: 36 }
+        { x: 392, y: 274, w: 36, h: 36, pair: 1 },
+        { x: 618, y: 148, w: 36, h: 36, pair: 0 }
       ],
       fallingBlocks: [
         { x: 240, y: 90, w: 42, h: 42, triggerDistance: 140 },
