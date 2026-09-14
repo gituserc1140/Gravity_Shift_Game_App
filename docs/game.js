@@ -133,7 +133,7 @@
     }
 
     startCampaign() {
-      this.startLevel(0);
+      this.startLevel(Math.max(0, this.state.unlockedLevel - 1));
     }
 
     startLevel(index) {
@@ -313,12 +313,9 @@
     checkPortals() {
       let touchedPortal = false;
       for (const portal of this.levelState.portals) {
-        if (portal.cooldown > 0) {
-          continue;
-        }
         if (Physics.overlaps(this.player.rect, portal)) {
           touchedPortal = true;
-          if (!this.player.portalLock) {
+          if (!this.player.portalLock && portal.cooldown <= 0) {
             const flipped = this.player.flip();
             if (flipped) {
               this.player.portalLock = true;
