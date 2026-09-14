@@ -319,9 +319,11 @@
         if (Physics.overlaps(this.player.rect, portal)) {
           touchedPortal = true;
           if (!this.player.portalLock) {
-            this.player.flip();
-            this.player.portalLock = true;
-            portal.cooldown = 0.3;
+            const flipped = this.player.flip();
+            if (flipped) {
+              this.player.portalLock = true;
+              portal.cooldown = 0.3;
+            }
           }
         }
       }
@@ -351,7 +353,7 @@
         }
       }
       for (const block of this.levelState.fallingBlocks) {
-        if (Physics.overlaps(this.player.rect, block.current)) {
+        if (block.active && !block.settled && Physics.overlaps(this.player.rect, block.current)) {
           return true;
         }
       }

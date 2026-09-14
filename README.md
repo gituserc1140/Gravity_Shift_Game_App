@@ -47,7 +47,7 @@ Because the game is fully static, you can open `/docs/index.html` directly in a 
 Example with Python:
 
 ```bash
-cd /home/runner/work/Gravity_Shift_Game_App/Gravity_Shift_Game_App
+cd Gravity_Shift_Game_App
 python -m http.server 8000
 ```
 
